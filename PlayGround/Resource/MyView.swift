@@ -11,27 +11,31 @@ class MyView :  UIView{
     
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        print("🥝\(#function)\n")
+        print("\n🥝\(self.restorationIdentifier!)🥝 - \(#function)")
     }
     
     override func setNeedsDisplay() {
         super.setNeedsDisplay()
-       // print("🥝\(#function)🥝")
+       //print("🥝\(#function)🥝")
     }
     
     override func setNeedsLayout() {
         super.setNeedsLayout()
-       // print("🥝\(#function)🥝")
+        print("🥝\(self.restorationIdentifier!)🥝 - \(#function)")
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        //print("\n🥝🥝\(#function)🥝🥝")
+        if (self.restorationIdentifier == "MintView"){
+            print("나는 민트뷰요~")
+            self.frame.size.height = 20
+        }
+        print("🥝\(self.restorationIdentifier!)🥝 - \(#function)")
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        print("🥝🥝🥝\(#function)🥝🥝🥝")
+        //print("🥝🥝🥝\(#function)🥝🥝🥝")
     }
 }
 

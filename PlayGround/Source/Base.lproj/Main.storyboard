@@ -13,7 +13,7 @@
         <scene sceneID="k4X-LZ-bve">
             <objects>
                 <viewController id="VE3-1V-THF" customClass="MyViewController" customModule="PlayGround" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="W8n-XH-jVC" customClass="MyView" customModule="PlayGround" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="Root View" id="W8n-XH-jVC" customClass="MyView" customModule="PlayGround" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1433"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="1315"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7i-nx-3Y7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="760"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="561"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm9-HK-0BM">
                                                 <rect key="frame" x="20" y="20" width="374" height="500"/>
@@ -41,7 +41,7 @@
                                                         <state key="normal" title="갱신 버튼">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <buttonConfiguration key="configuration" style="plain" title="갱신 버튼">
+                                                        <buttonConfiguration key="configuration" style="plain" title="좌표 출력">
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
@@ -50,7 +50,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstItem="fUi-69-eCS" firstAttribute="centerY" secondItem="Nm9-HK-0BM" secondAttribute="centerY" id="5Zu-kT-UkC"/>
                                                     <constraint firstItem="ymf-er-Dl6" firstAttribute="top" secondItem="fUi-69-eCS" secondAttribute="bottom" constant="40" id="FXy-kd-abg"/>
@@ -59,11 +59,11 @@
                                                     <constraint firstAttribute="height" constant="500" id="pl3-ai-SB7"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-fD-ehw" userLabel="CollectionView">
-                                                <rect key="frame" x="20" y="540" width="374" height="200"/>
-                                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="Collection View" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-fD-ehw" userLabel="CollectionView" customClass="MyCollectionView" customModule="PlayGround" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="540" width="374" height="1"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="t6f-cA-F55"/>
+                                                    <constraint firstAttribute="height" constant="1" id="t6f-cA-F55"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="crh-zy-iZg">
                                                     <size key="itemSize" width="179" height="229"/>
@@ -147,6 +147,8 @@
                     <connections>
                         <outlet property="collectionViewHeight" destination="t6f-cA-F55" id="kan-2j-wKk"/>
                         <outlet property="myCollectionView" destination="IGF-fD-ehw" id="Uoc-PV-5Wg"/>
+                        <outlet property="myScrollView" destination="xSs-ck-osf" id="tfu-5a-I52"/>
+                        <outlet property="redView" destination="Nm9-HK-0BM" id="d6W-Ll-Sau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJo-4A-E9A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,24 +159,59 @@
         <scene sceneID="U6C-LK-yJq">
             <objects>
                 <viewController id="lEk-HC-H6c" customClass="MyViewController2" customModule="PlayGround" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RE6-Ks-qe9" customClass="MyView" customModule="PlayGround" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="RootView" id="RE6-Ks-qe9" customClass="MyView" customModule="PlayGround" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqC-bG-esb">
-                                <rect key="frame" x="150" y="142" width="76.5" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" restorationIdentifier="MintView" translatesAutoresizingMaskIntoConstraints="NO" id="RQQ-PT-1jh" customClass="MyView" customModule="PlayGround" customModuleProvider="target">
+                                <rect key="frame" x="30" y="144" width="354" height="100"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="x4x-Fc-dQz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="OrangeBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXf-TS-2oH">
+                                <rect key="frame" x="30" y="762" width="354" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gvo-mA-DdC"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="setNeedLayout()">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnPressed:" destination="lEk-HC-H6c" eventType="touchUpInside" id="j7e-p4-xPm"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVE-wE-xsl">
+                                <rect key="frame" x="30" y="264" width="354" height="128"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="fi0-CM-l5J"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kx2-9P-mwY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pqC-bG-esb" firstAttribute="leading" secondItem="Kx2-9P-mwY" secondAttribute="leading" constant="150" id="DEe-V2-8R4"/>
-                            <constraint firstItem="pqC-bG-esb" firstAttribute="top" secondItem="Kx2-9P-mwY" secondAttribute="top" constant="98" id="trN-gb-faF"/>
+                            <constraint firstItem="Kx2-9P-mwY" firstAttribute="trailing" secondItem="dVE-wE-xsl" secondAttribute="trailing" constant="30" id="1zo-sI-Gjb"/>
+                            <constraint firstItem="Kx2-9P-mwY" firstAttribute="trailing" secondItem="mXf-TS-2oH" secondAttribute="trailing" constant="30" id="5cG-TX-g78"/>
+                            <constraint firstItem="mXf-TS-2oH" firstAttribute="leading" secondItem="Kx2-9P-mwY" secondAttribute="leading" constant="30" id="60n-Z9-ejz"/>
+                            <constraint firstItem="dVE-wE-xsl" firstAttribute="top" secondItem="RQQ-PT-1jh" secondAttribute="bottom" constant="20" id="8zJ-34-ohi"/>
+                            <constraint firstItem="dVE-wE-xsl" firstAttribute="centerX" secondItem="RE6-Ks-qe9" secondAttribute="centerX" id="KXR-q7-bee"/>
+                            <constraint firstItem="Kx2-9P-mwY" firstAttribute="bottom" secondItem="mXf-TS-2oH" secondAttribute="bottom" constant="50" id="Qoz-fv-aWJ"/>
+                            <constraint firstItem="Kx2-9P-mwY" firstAttribute="trailing" secondItem="RQQ-PT-1jh" secondAttribute="trailing" constant="30" id="X91-72-HeJ"/>
+                            <constraint firstItem="dVE-wE-xsl" firstAttribute="leading" secondItem="Kx2-9P-mwY" secondAttribute="leading" constant="30" id="dqN-fY-ohy"/>
+                            <constraint firstItem="RQQ-PT-1jh" firstAttribute="leading" secondItem="Kx2-9P-mwY" secondAttribute="leading" constant="30" id="sqY-EU-YvL"/>
+                            <constraint firstItem="RQQ-PT-1jh" firstAttribute="top" secondItem="Kx2-9P-mwY" secondAttribute="top" constant="100" id="uNb-L5-rko"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mintView" destination="RQQ-PT-1jh" id="ycD-hb-H7a"/>
+                        <outlet property="ornageBtn" destination="mXf-TS-2oH" id="vFI-fX-a7N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y70-PO-Shb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,11 +220,20 @@
     </scenes>
     <resources>
         <image name="airForce" width="600" height="602"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -12,6 +12,9 @@ class MyViewController2 : UIViewController{
     
     //MARK: - IBOutlet
     
+    @IBOutlet weak var mintView: UIView!
+    
+    @IBOutlet weak var ornageBtn: UIButton!
     //MARK: - Properties
     
     
@@ -21,30 +24,46 @@ class MyViewController2 : UIViewController{
         super.viewDidLoad()
         print("🍓\(#function)🍓")
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("🍓\(#function)🍓")
+        //print("\(mintView.frame.size.height)\n")
+        
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("\n🍓\(#function)🍓")
-    }
+   
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        print("\n🍓🍓\(#function)🍓🍓")
+        print("🍓🍓\(#function)🍓🍓")
+       
+        //print("\(mintView.frame.size.height)\n")
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         print("🍓🍓\(#function)🍓🍓")
+        //mintView.frame.size.height = 400
+        //print("\(mintView.frame.size.height)\n")
+        
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("\n🍓\(#function)🍓")
+        //print("\(mintView.frame.size.height)\n")
+        
+       
+    }
     //MARK: - Custom Method
     
     //MARK: - IBAction
     
+    @IBAction func btnPressed(_ sender: Any) {
+        //view.setNeedsLayout()
+    }
 }
 
